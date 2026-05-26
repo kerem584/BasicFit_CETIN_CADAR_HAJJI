@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36212.18 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicFit_CETIN_CADAR_HAJJI", "BasicFit_CETIN_CADAR_HAJJI\BasicFit_CETIN_CADAR_HAJJI.csproj", "{A4E3B8FF-7DD6-47A4-8A16-1AAA7C4CDB05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicFit_CETIN_CADAR_HAJJI", "BasicFit_CETIN_CADAR_HAJJI\BasicFit_CETIN_CADAR_HAJJI.csproj", "{6D2FD9F1-3CFA-4246-978A-763DC755FD84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A4E3B8FF-7DD6-47A4-8A16-1AAA7C4CDB05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4E3B8FF-7DD6-47A4-8A16-1AAA7C4CDB05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4E3B8FF-7DD6-47A4-8A16-1AAA7C4CDB05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4E3B8FF-7DD6-47A4-8A16-1AAA7C4CDB05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2FD9F1-3CFA-4246-978A-763DC755FD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2FD9F1-3CFA-4246-978A-763DC755FD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2FD9F1-3CFA-4246-978A-763DC755FD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2FD9F1-3CFA-4246-978A-763DC755FD84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7DF81BEB-7992-4EE9-846C-72DE3EB36C7B}
+		SolutionGuid = {6F8F7058-EB92-41FC-9508-E5DFD8743622}
 	EndGlobalSection
 EndGlobal
