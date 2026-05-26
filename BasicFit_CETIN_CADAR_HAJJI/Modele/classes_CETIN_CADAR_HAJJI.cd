@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Cours">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACgAAAAoAAIIAAAAAAAACAAAAAgAAA=</HashCode>
+      <FileName>Modele\Cours.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Entraineur">
+    <Position X="10.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAEAAIAAAACAAAAAAAAAABAAAAAQAAAAA=</HashCode>
+      <FileName>Modele\Entraineur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Inscription">
+    <Position X="12.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAAAAAAAAAAAAAAAAAAACAAAABgAAAAQ=</HashCode>
+      <FileName>Modele\Inscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Salle">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIBAAACAQAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Modele\Salle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Seance">
+    <Position X="15.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAigAMAEACAgBAAgIAAAACgAAAAIAAAAAAAAAAAIoA=</HashCode>
+      <FileName>Modele\Seance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Categorie">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAABAAAAARAAAAAAQAAAAEA=</HashCode>
+      <FileName>Modele\Categorie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Abonnement">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAUAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAFA=</HashCode>
+      <FileName>Modele\Abonnement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Client">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAQAAgAEAAIAgAAQIAAAECAQIABAkKAAQQCAAIE=</HashCode>
+      <FileName>Modele\Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
