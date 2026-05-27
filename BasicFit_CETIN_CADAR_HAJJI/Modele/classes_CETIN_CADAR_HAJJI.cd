@@ -56,5 +56,12 @@
       <FileName>Modele\Client.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BasicFit_CETIN_CADAR_HAJJI.Modele.Utilisateur">
+    <Position X="17.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQQAAAEEAAAAAAEAAAABAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <FileName>Modele\Utilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
