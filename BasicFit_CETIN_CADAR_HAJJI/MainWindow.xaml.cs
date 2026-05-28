@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using BasicFit_CETIN_CADAR_HAJJI.Modele;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,7 +19,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI
     {
         public MainWindow()
         {
-            InitializeComponent();
+            
         }
     }
 }
