@@ -17,31 +17,10 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
 {
     public partial class UC_Login : UserControl
     {
-        private readonly string placeholder = "ex : a.lacroix";
 
         public UC_Login()
         {
             InitializeComponent();
-        }
-
-        // Placeholder : efface le texte gris au clic
-        private void tbLogin_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbLogin.Text == placeholder)
-            {
-                tbLogin.Text = "";
-                tbLogin.Foreground = new SolidColorBrush(Colors.Black);
-            }
-        }
-
-        // Placeholder : remet le texte gris si vide
-        private void tbLogin_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbLogin.Text))
-            {
-                tbLogin.Text = placeholder;
-                tbLogin.Foreground = new SolidColorBrush(Color.FromRgb(156, 163, 175));
-            }
         }
 
         private void btnConnexion_Click(object sender, RoutedEventArgs e)

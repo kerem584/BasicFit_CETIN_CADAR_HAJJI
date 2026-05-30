@@ -39,8 +39,6 @@
                              Padding="10,8"
                              FontSize="12"
                              Background="Transparent"
-                             GotFocus="tbLogin_GotFocus"
-                             LostFocus="tbLogin_LostFocus"
                              Foreground="#9CA3AF" />
                 </Border>
 
