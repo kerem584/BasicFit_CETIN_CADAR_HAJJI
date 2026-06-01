@@ -1,4 +1,4 @@
-﻿using BasicFITAPP;
+﻿using BasicFit_CETIN_CADAR_HAJJI;
 using Npgsql;
 using System.Collections.Generic;
 using System.ComponentModel;

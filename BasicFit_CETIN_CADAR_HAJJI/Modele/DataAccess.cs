@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BasicFITAPP
+namespace BasicFit_CETIN_CADAR_HAJJI
 {
     public class DataAccess
     {
