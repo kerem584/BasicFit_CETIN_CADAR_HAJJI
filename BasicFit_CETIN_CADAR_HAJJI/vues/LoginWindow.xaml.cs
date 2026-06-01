@@ -23,5 +23,10 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
         {
             InitializeComponent();
         }
+
+        private void UC_Login_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

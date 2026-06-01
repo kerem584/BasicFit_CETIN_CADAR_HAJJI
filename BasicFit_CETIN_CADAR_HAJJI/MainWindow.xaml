@@ -3,10 +3,59 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BasicFit_CETIN_CADAR_HAJJI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="850">
+        Title="Basic Fit" Height="500" Width="850"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- SIDEBAR -->
+        <DockPanel Grid.Column="0" Background="#1A1F2E">
+
+            <!-- LOGO + INFOS EN HAUT -->
+            <StackPanel DockPanel.Dock="Top" Margin="16,20,16,16">
+                <Image Source="/Img/logo.png" Height="40"/>
+                <TextBlock Text="Réservations de cours"
+                           FontSize="10" Foreground="#94A3B8"
+                           Margin="0,4,0,0"/>
+                <Separator Background="#334155" Margin="0,12,0,0"/>
+                <TextBlock x:Name="tbNomUser"
+                           Text="Utilisateur"
+                           FontSize="12" FontWeight="Bold"
+                           Foreground="White"
+                           Margin="0,10,0,2"/>
+                <TextBlock x:Name="tbRoleUser"
+                           Text=""
+                           FontSize="10" Foreground="#94A3B8"/>
+                <Separator Background="#334155" Margin="0,12,0,0"/>
+            </StackPanel>
+
+            <!-- BOUTON DÉCONNEXION EN BAS -->
+            <Button DockPanel.Dock="Bottom"
+                    Content="Se déconnecter"
+                    Margin="12,12"
+                    Padding="0,10"
+                    Cursor="Hand"
+                    Background="#EF4444"
+                    Foreground="White"
+                    FontSize="11" FontWeight="Bold"
+                    BorderThickness="0"
+                    Click="btnDeconnexion_Click"/>
+
+            <!-- MENU (rempli depuis le .cs) -->
+            <StackPanel x:Name="spMenu"
+                        DockPanel.Dock="Top"
+                        Margin="0,4,0,0"/>
+
+        </DockPanel>
+
+        <!-- ZONE CONTENU -->
+        <ContentControl x:Name="ZoneContenu"
+                        Grid.Column="1"/>
 
     </Grid>
 </Window>

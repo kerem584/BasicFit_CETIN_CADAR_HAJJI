@@ -25,11 +25,37 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
 
         private void btnConnexion_Click(object sender, RoutedEventArgs e)
         {
-            // TODO étape 5 : vérifier en BD
-            // Pour l'instant : juste ouvrir la MainWindow pour tester la navigation
-            MainWindow mw = new MainWindow();
+            string login = tbLogin.Text;
+            string mdp = pbMdp.Password;
+
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(mdp))
+            {
+                tbErreur.Visibility = Visibility.Visible;
+                return;
+            }
+
+            // TODO étape 5 : remplacer par vrai check BD
+            // Pour l'instant on simule avec des logins de test
+            string role = "";
+            if (login == "employe" && mdp == "1234")
+                role = "employe";
+            else if (login == "responsable" && mdp == "1234")
+                role = "responsable";
+            else
+            {
+                tbErreur.Visibility = Visibility.Visible;
+                return;
+            }
+
+            tbErreur.Visibility = Visibility.Collapsed;
+            MainWindow mw = new MainWindow(role);
             mw.Show();
             Window.GetWindow(this).Close();
+        }
+
+        private void tbLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
