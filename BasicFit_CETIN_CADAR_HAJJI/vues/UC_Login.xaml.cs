@@ -39,7 +39,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
             string role = "";
             if (login == "employe" && mdp == "1234")
                 role = "employe";
-            else if (login == "responsable" && mdp == "1234")
+            else if (login == "resp" && mdp == "resp")
                 role = "responsable";
             else
             {
