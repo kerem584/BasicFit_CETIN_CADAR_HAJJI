@@ -1,6 +1,8 @@
 ﻿using BasicFit_CETIN_CADAR_HAJJI.Modele;
+using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,5 +67,21 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
                 this.role = value;
             }
         }
+        // Cherche le rôle en fonction du login
+        public Utilisateur FindByLogin(string login)
+        {
+            using (var cmd = new NpgsqlCommand("SELECT * FROM utilisateur WHERE login = @login"))
+            {
+                cmd.Parameters.AddWithValue("login", login);
+                DataTable dt = DataAccess.ExecuteSelect(cmd);
+                if (dt.Rows.Count == 0) return null;
+                Utilisateur u = new Utilisateur();
+                u.Login = (string)dt.Rows[0]["login"];
+                u.Role = (string)dt.Rows[0]["role"];
+                return u;
+            }
+        }
     }
 }
+    
+

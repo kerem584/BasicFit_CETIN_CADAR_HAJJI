@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BasicFit_CETIN_CADAR_HAJJI.Modele;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,24 +34,42 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
                 tbErreur.Visibility = Visibility.Visible;
                 return;
             }
-
-            // TODO étape 5 : remplacer par vrai check BD
-            // Pour l'instant on simule avec des logins de test
-            string role = "";
-            if (login == "employe" && mdp == "1234")
-                role = "employe";
-            else if (login == "resp" && mdp == "resp")
-                role = "responsable";
-            else
+            try
             {
-                tbErreur.Visibility = Visibility.Visible;
-                return;
+                DataAccess.InitializeConnection(login, mdp);
+                DataAccess.GetConnection();
+                Utilisateur u = new Utilisateur().FindByLogin(login);
+
+                if (u == null)
+                {
+                    tbErreur.Visibility = Visibility.Visible;
+                    return;
+                }
+
+                tbErreur.Visibility = Visibility.Collapsed;
+                MainWindow mw = new MainWindow(u.Role);
+                mw.Show();
+                Window.GetWindow(this).Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("La connexion a échoué. verifiez vos login.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            tbErreur.Visibility = Visibility.Collapsed;
-            MainWindow mw = new MainWindow(role);
-            mw.Show();
-            Window.GetWindow(this).Close();
+
+
+            //string role = "";
+            //if (login == "employe" && mdp == "1234")
+            //    role = "employe";
+            //else if (login == "resp" && mdp == "resp")
+            //    role = "responsable";
+            //else
+            //{
+            //    tbErreur.Visibility = Visibility.Visible;
+            //    return;
+            //}
+
+            
         }
 
         private void tbLogin_TextChanged(object sender, TextChangedEventArgs e)
