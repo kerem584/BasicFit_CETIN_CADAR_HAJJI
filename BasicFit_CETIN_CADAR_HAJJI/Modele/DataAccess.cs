@@ -14,15 +14,40 @@ namespace BasicFit_CETIN_CADAR_HAJJI
 
 
 
+        //CONNEXION AVEC BDD IUT
+        //public static void InitializeConnection(string username, string password)
+        //{
+        //    connectionString = $"Host=localhost;Port=5432;Username={username};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
 
+        //    //connectionString = $"Host=srv-peda-new;Port=5433;Username={username};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI;";
+
+        //    connection = new NpgsqlConnection(connectionString);
+        //}
+
+
+        // CONNEXION AVEC BDD LOCALE
         public static void InitializeConnection(string username, string password)
         {
-            connectionString = $"Host=localhost;Port=5432;Username={username};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
+            // En local, on force toujours postgres comme user PostgreSQL
+            // mais on garde le login pour chercher le rôle dans la table utilisateur
+            string pgUser = username;
 
-            //connectionString = $"Host=srv-peda-new;Port=5433;Username={username};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI;";
-
-            connection = new NpgsqlConnection(connectionString);
+            connectionString = $"Host=localhost;Port=5432;Username={pgUser};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
+            try
+            {
+                connection = new NpgsqlConnection(connectionString);
+                connection.Open();
+            }
+            catch
+            {
+                // Si connexion échoue avec le login saisi, essaie avec postgres
+                connectionString = $"Host=localhost;Port=5432;Username=postgres;Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
+                connection = new NpgsqlConnection(connectionString);
+                connection.Open();
+            }
         }
+
+
 
         // pour récupérer la connexion (et l'ouvrir si nécessaire)
         public static NpgsqlConnection GetConnection()
