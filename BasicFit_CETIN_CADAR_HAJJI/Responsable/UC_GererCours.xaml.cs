@@ -29,7 +29,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Window.GetWindow(this), "Erreur de chargement : " + ex.Message,
+                MessageBox.Show("Erreur de chargement : " + ex.Message,
                                 "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -57,7 +57,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
         // ===== AJOUTER =====
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            // Vide le formulaire pour un nouvel ajout
             tbNom.Text = "";
             tbDescription.Text = "";
             cbCategorie.SelectedItem = null;
@@ -66,19 +65,20 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
 
         private void btnValiderAjout_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbNom.Text) || string.IsNullOrWhiteSpace(tbDescription.Text) || cbCategorie.SelectedItem == null)
+            if (string.IsNullOrWhiteSpace(tbNom.Text)
+                || string.IsNullOrWhiteSpace(tbDescription.Text)
+                || cbCategorie.SelectedItem == null)
             {
-                MessageBox.Show(Window.GetWindow(this), "Veuillez remplir tous les champs obligatoires",
+                MessageBox.Show("Veuillez remplir tous les champs obligatoires",
                                 "Champs manquants", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            // Vérification doublon
             foreach (Cours c in lesCours)
             {
                 if (c.CoursNom.ToLower() == tbNom.Text.ToLower())
                 {
-                    MessageBox.Show((Window)this.Parent, "Un cours avec ce nom existe déjà",
+                    MessageBox.Show("Un cours avec ce nom existe déjà",
                                     "Doublon", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
@@ -100,7 +100,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
             }
             catch (Exception ex)
             {
-                MessageBox.Show((Window)this.Parent, "Erreur à l'ajout : " + ex.Message,
+                MessageBox.Show("Erreur à l'ajout : " + ex.Message,
                                 "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -110,14 +110,14 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
         {
             if (dgCours.SelectedItem == null)
             {
-                MessageBox.Show(Window.GetWindow(this), "Veuillez sélectionner un cours",
+                MessageBox.Show("Veuillez sélectionner un cours",
                                 "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
             Cours coursSelectionne = (Cours)dgCours.SelectedItem;
 
-            MessageBoxResult result = MessageBox.Show(Window.GetWindow(this),
+            MessageBoxResult result = MessageBox.Show(
                 $"Voulez-vous rendre le cours '{coursSelectionne.CoursNom}' indisponible ?",
                 "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
@@ -130,7 +130,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(Window.GetWindow(this), "Erreur : " + ex.Message,
+                    MessageBox.Show("Erreur : " + ex.Message,
                                     "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }

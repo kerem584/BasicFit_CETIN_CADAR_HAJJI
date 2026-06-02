@@ -11,7 +11,9 @@ namespace BasicFit_CETIN_CADAR_HAJJI
 
         static DataAccess()
         {
-            connectionString = "Host=srv-peda-new;Port=5433;Username=cadarm;Password=5Uhmkp;Database=BasicFit_CADAR_CETIN_HAJJI";
+            connectionString = "Host=localhost;Port=5432;Username=postgres;Password=Mohidinee.07;Database=BasicFit_CADAR_CETIN_HAJJI";
+
+            //connectionString = "Host=srv-peda-new;Port=5433;Username=cadarm;Password=5Uhmkp;Database=BasicFit_CADAR_CETIN_HAJJI";
             try
             {
                 connection = new NpgsqlConnection(connectionString);
