@@ -5,74 +5,101 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BasicFit_CETIN_CADAR_HAJJI.Responsable"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <!-- Titre -->
-            <RowDefinition Height="*"/>
-            <!-- Contenu -->
-        </Grid.RowDefinitions>
+             d:DesignHeight="600" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="20">
 
-        <!-- TITRE -->
-        <TextBlock Grid.Row="0"
-                   Text="Catégories de cours"
-                   FontSize="20" FontWeight="Bold"
-                   Margin="0,0,0,16"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <!-- CONTENU : liste à gauche + formulaire à droite -->
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="20"/>
-                <ColumnDefinition Width="300"/>
-            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Catégorie des cours"
+                       FontSize="20" FontWeight="Bold"
+                       Margin="0,0,0,16"/>
 
-            <!-- DATAGRID -->
-            <DataGrid x:Name="dgCategories"
+                <TextBox x:Name="Catégories"
+                     Width="250"
+                     Margin="0,0,0,12"
+                     HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <DataGrid x:Name="dgCategories"
                       Grid.Column="0"
+                      MaxHeight="250"
                       IsReadOnly="True"
                       AutoGenerateColumns="False"
                       CanUserAddRows="False"
                       HeadersVisibility="Column"
                       SelectionMode="Single"
-                      ItemsSource="{Binding LesCategories}"
-                      SelectionChanged="dgCategories_SelectionChanged">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Nom"         Binding="{Binding CategorieNom}"         Width="*"/>
-                    <DataGridTextColumn Header="Description" Binding="{Binding CategorieDescription}" Width="2*"/>
-                </DataGrid.Columns>
-            </DataGrid>
+                      ItemsSource="{Binding LesCategories}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Nom"         Binding="{Binding CategorieNom}"         Width="*"/>
+                        <DataGridTextColumn Header="Description" Binding="{Binding CategorieDescription}" Width="2*"/>
+                    </DataGrid.Columns>
 
-            <!-- FORMULAIRE AJOUT -->
-            <GroupBox Grid.Column="2" Header="Ajouter une catégorie">
-                <StackPanel Margin="8">
+                </DataGrid>
 
-                    <TextBlock Text="Nom *" Margin="0,0,0,4"/>
-                    <TextBox x:Name="tbNom"
-                             Margin="0,0,0,12"/>
+                <StackPanel Grid.Column="1" Margin="12,0,0,0" VerticalAlignment="Top">
+                    <Button x:Name="btnAjouter"
+                        Content="Ajouter"
+                        Width="120" Height="30"
+                        Margin="0,0,0,8"
+                        Click="btnAjouter_Click"/>
+                    <Button x:Name="btnSupprimer"
+                        Content="Rendre indisponible"
+                        Width="120" Height="30"
+                        Click="btnSupprimer_Click"/>
+                </StackPanel>
+            </Grid>
 
-                    <TextBlock Text="Description *" Margin="0,0,0,4"/>
-                    <TextBox x:Name="tbDescription"
-                             Height="80"
+            <StackPanel Grid.Row="2">
+                <GroupBox Header="Nouvelle catégorie">
+                    <Grid Margin="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Nom *" Grid.Row="0" Grid.Column="0"
+                               VerticalAlignment="Center" Margin="0,0,8,8"/>
+                        <TextBox x:Name="tbNom" Grid.Row="0" Grid.Column="1"
+                             Margin="0,0,16,8"/>
+
+                        <TextBlock Text="Description *" Grid.Row="1" Grid.Column="0"
+                               VerticalAlignment="Top" Margin="0,4,8,0"/>
+                        <TextBox x:Name="tbDescription" Grid.Row="1" Grid.Column="1"
+                             Grid.ColumnSpan="3"
+                             Height="60"
                              AcceptsReturn="True"
                              TextWrapping="Wrap"
-                             VerticalScrollBarVisibility="Auto"
-                             Margin="0,0,0,12"/>
+                             VerticalScrollBarVisibility="Auto"/>
+                    </Grid>
+                </GroupBox>
 
-                    <TextBlock Text="* Champs obligatoires"
-                               FontSize="10" Foreground="Gray"
-                               FontStyle="Italic"
-                               Margin="0,0,0,12"/>
-
-                    <Button x:Name="btnAjouter"
-                            Content="Ajouter"
-                            Height="30"
-                            Click="btnAjouter_Click"/>
-
-                </StackPanel>
-            </GroupBox>
+                <Button x:Name="btnValiderAjout"
+                    Content="Valider l'ajout"
+                    Width="120" Height="30"
+                    HorizontalAlignment="Right"
+                    Margin="0,8,0,0"
+                    Click="btnValiderAjout_Click"/>
+            </StackPanel>
 
         </Grid>
-    </Grid>
+    </ScrollViewer>
 </UserControl>
