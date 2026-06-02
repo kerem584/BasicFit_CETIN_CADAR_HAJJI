@@ -51,6 +51,10 @@ namespace BasicFit_CETIN_CADAR_HAJJI
                 btnAccueil.Click += BtnAccueilResponsable_Click;
                 spMenu.Children.Add(btnAccueil);
 
+                Button btnCategories = CreeBouton("Catégories");
+                btnCategories.Click += BtnCategories_Click;
+                spMenu.Children.Add(btnCategories);
+
                 Button btnGerer = CreeBouton("Gérer les cours");
                 btnGerer.Click += BtnGererCours_Click;
                 spMenu.Children.Add(btnGerer);
@@ -59,9 +63,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI
                 btnPlanning.Click += BtnPlanning_Click;
                 spMenu.Children.Add(btnPlanning);
 
-                Button btnCategories = CreeBouton("Catégories");
-                btnCategories.Click += BtnCategories_Click;
-                spMenu.Children.Add(btnCategories);
+                
 
                 ZoneContenu.Content = new UC_AccueilResponsable();
             }
