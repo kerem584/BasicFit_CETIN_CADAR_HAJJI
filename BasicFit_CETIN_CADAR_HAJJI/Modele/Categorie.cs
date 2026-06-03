@@ -55,8 +55,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
             get { return this.categorieDescription; }
             set
             {
-                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("La description est obligatoire");
-                this.categorieDescription = value;
+                this.categorieDescription = value ?? "";
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CategorieDescription)));
             }
         }

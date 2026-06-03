@@ -2,77 +2,63 @@
 using System.Data;
 using Npgsql;
 
-
 namespace BasicFit_CETIN_CADAR_HAJJI
 {
-
     public class DataAccess
     {
-
         private static string connectionString;
         private static NpgsqlConnection connection;
 
-
-
-        //CONNEXION AVEC BDD IUT
+        // CONNEXION AVEC BDD IUT
         public static void InitializeConnection(string username, string password)
         {
-            //connectionString = $"Host=localhost;Port=5432;Username={username};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
-
             connectionString = $"Host=srv-peda-new;Port=5433;Username={username};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI;";
-
-            connection = new NpgsqlConnection(connectionString);
+            try
+            {
+                connection = new NpgsqlConnection(connectionString);
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                LogError.Log(ex, "Pb à la connexion\n");
+                throw;
+            }
         }
-
 
         // CONNEXION AVEC BDD LOCALE
         //public static void InitializeConnection(string username, string password)
         //{
-        //    // En local, on force toujours postgres comme user PostgreSQL
-        //    // mais on garde le login pour chercher le rôle dans la table utilisateur
-        //    string pgUser = username;
-
-        //    connectionString = $"Host=localhost;Port=5432;Username={pgUser};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
+        //    connectionString = $"Host=localhost;Port=5432;Username=postgres;Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
         //    try
         //    {
         //        connection = new NpgsqlConnection(connectionString);
         //        connection.Open();
         //    }
-        //    catch
+        //    catch (Exception ex)
         //    {
-        //        // Si connexion échoue avec le login saisi, essaie avec postgres
-        //        connectionString = $"Host=localhost;Port=5432;Username=postgres;Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
-        //        connection = new NpgsqlConnection(connectionString);
-        //        connection.Open();
+        //        LogError.Log(ex, "Pb à la connexion\n");
+        //        throw;
         //    }
         //}
 
-
-
-        // pour récupérer la connexion (et l'ouvrir si nécessaire)
         public static NpgsqlConnection GetConnection()
         {
-
             if (connection == null)
-            {
-                throw new InvalidOperationException("La connexion n'a pas été initialisée avec un login et un mot de passe.");
-            }
+                throw new InvalidOperationException("La connexion n'a pas été initialisée.");
 
             if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
-
                 try
                 {
                     connection.Open();
                 }
                 catch (Exception ex)
                 {
-                    LogError.Log(ex, "Pb à la connexion  \n");
+                    LogError.Log(ex, "Pb à la connexion\n");
                     throw;
                 }
 
             return connection;
         }
-
 
         public static DataTable ExecuteSelect(NpgsqlCommand cmd)
         {
@@ -81,88 +67,63 @@ namespace BasicFit_CETIN_CADAR_HAJJI
             {
                 cmd.Connection = GetConnection();
                 using (var adapter = new NpgsqlDataAdapter(cmd))
-                {
                     adapter.Fill(dataTable);
-                }
             }
             catch (Exception ex)
             {
-                LogError.Log(ex, "Pb de executeSelect \n" + cmd.CommandText);
+                LogError.Log(ex, "Pb de executeSelect\n" + cmd.CommandText);
                 throw;
             }
-
             return dataTable;
         }
 
-        //   pour requêtes INSERT et renvoie l'ID généré
-
         public static int ExecuteInsert(NpgsqlCommand cmd)
         {
-            int nb = 0;
             try
             {
                 cmd.Connection = GetConnection();
-                nb = (int)cmd.ExecuteScalar();
-
+                return (int)cmd.ExecuteScalar();
             }
             catch (Exception ex)
             {
-                LogError.Log(ex, "Pb de executeInsert \n" + cmd.CommandText);
+                LogError.Log(ex, "Pb de executeInsert\n" + cmd.CommandText);
                 throw;
             }
-            return nb;
-
         }
 
-
-
-
-        //  pour requêtes UPDATE, DELETE
         public static int ExecuteSet(NpgsqlCommand cmd)
         {
-            int nb = 0;
             try
             {
                 cmd.Connection = GetConnection();
-                nb = cmd.ExecuteNonQuery();
+                return cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                LogError.Log(ex, "Pb de executeSet \n" + cmd.CommandText);
+                LogError.Log(ex, "Pb de executeSet\n" + cmd.CommandText);
                 throw;
             }
-            return nb;
-
         }
 
-        // pour requêtes avec une seule valeur retour  (ex : 1 colonne, ou COUNT, SUM) 
         public static string ExecuteSelectOneValue(NpgsqlCommand cmd)
         {
-            object res = null;
             try
             {
                 cmd.Connection = GetConnection();
-                res = cmd.ExecuteScalar();
+                object res = cmd.ExecuteScalar();
+                return res.ToString();
             }
             catch (Exception ex)
             {
-                LogError.Log(ex, "Pb de ExecuteSelectOneValue \n" + cmd.CommandText);
+                LogError.Log(ex, "Pb de ExecuteSelectOneValue\n" + cmd.CommandText);
                 throw;
             }
-            return res.ToString();
-
         }
 
-        //  Fermer la connexion 
         public static void CloseConnection()
         {
             if (connection.State == ConnectionState.Open)
-            {
                 connection.Close();
-            }
         }
     }
 }
-
-
-
