@@ -57,9 +57,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI
                 btnGerer.Click += BtnGererCours_Click;
                 spMenu.Children.Add(btnGerer);
 
-                Button btnPlanning = CreeBouton("Planning séances");
-                btnPlanning.Click += BtnPlanning_Click;
-                spMenu.Children.Add(btnPlanning);
+                
 
                 
 
@@ -110,10 +108,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI
             ZoneContenu.Content = new UC_GererCours();
         }
 
-        private void BtnPlanning_Click(object sender, RoutedEventArgs e)
-        {
-            ZoneContenu.Content = new UC_PlanningSeances();
-        }
+        
 
         private void BtnCategories_Click(object sender, RoutedEventArgs e)
         {
