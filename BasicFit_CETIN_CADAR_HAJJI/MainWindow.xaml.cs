@@ -37,9 +37,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI
                 btnInscrire.Click += BtnInscrireClient_Click;
                 spMenu.Children.Add(btnInscrire);
 
-                Button btnJour = CreeBouton("Cours du jour");
-                btnJour.Click += BtnCoursDuJour_Click;
-                spMenu.Children.Add(btnJour);
+                
 
                 ZoneContenu.Content = new UC_AccueilEmploye();
             }
@@ -99,10 +97,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI
             ZoneContenu.Content = new UC_InscrireClient();
         }
 
-        private void BtnCoursDuJour_Click(object sender, RoutedEventArgs e)
-        {
-            ZoneContenu.Content = new UC_CoursDuJour();
-        }
+        
 
 
         private void BtnAccueilResponsable_Click(object sender, RoutedEventArgs e)
