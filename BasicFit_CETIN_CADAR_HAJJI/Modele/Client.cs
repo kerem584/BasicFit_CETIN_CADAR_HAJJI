@@ -220,7 +220,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
                 (string)dr["prenom"],
                 (string)dr["mail"],
                 (string)dr["telephone"],
-                (DateTime)dr["date_naissance"],
+                ((DateOnly)dr["date_naissance"]).ToDateTime(TimeOnly.MinValue),
                 dr["adresse"] == DBNull.Value ? "" : (string)dr["adresse"],
                 dr["code_postal"] == DBNull.Value ? "" : (string)dr["code_postal"],
                 dr["ville"] == DBNull.Value ? "" : (string)dr["ville"],
