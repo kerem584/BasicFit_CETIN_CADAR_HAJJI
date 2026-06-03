@@ -58,6 +58,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
                 this.categorieDescription = value ?? "";
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CategorieDescription)));
             }
+
         }
 
         public int Create()

@@ -77,6 +77,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI
             return dataTable;
         }
 
+
         public static int ExecuteInsert(NpgsqlCommand cmd)
         {
             try

@@ -48,6 +48,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
                 this.coursNom = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CoursNom)));
             }
+
         }
 
         public string CoursDescription
