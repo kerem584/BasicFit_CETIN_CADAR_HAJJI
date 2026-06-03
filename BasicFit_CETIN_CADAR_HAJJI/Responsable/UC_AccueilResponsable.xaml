@@ -1,12 +1,93 @@
 ﻿<UserControl x:Class="BasicFit_CETIN_CADAR_HAJJI.Responsable.UC_AccueilResponsable"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BasicFit_CETIN_CADAR_HAJJI.Responsable"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" Height="461" Width="692">
+
+    <Grid Margin="20" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Titre -->
+            <RowDefinition Height="Auto"/>
+            <!-- Date -->
+            <RowDefinition Height="Auto"/>
+            <!-- Filtre + bouton -->
+            <RowDefinition Height="*"/>
+            <!-- DataGrid — prend tout l'espace restant -->
+        </Grid.RowDefinitions>
+
+        <!-- TITRE -->
+        <TextBlock Grid.Row="0"
+                   Text="Accueil responsable"
+                   FontSize="20" FontWeight="Bold"
+                   Margin="0,0,0,4"/>
+
+        <!-- DATE -->
+        <TextBlock x:Name="tbDate" Grid.Row="1"
+                   FontSize="13" Foreground="Gray"
+                   Margin="0,0,0,20"/>
+
+        <!-- FILTRE + BOUTON -->
+        <Grid Grid.Row="2" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Jour : " Grid.Column="0"
+                       VerticalAlignment="Center" Margin="0,0,8,0"/>
+            <ComboBox x:Name="cbJour" Grid.Column="1"
+                      SelectionChanged="cbJour_SelectionChanged"/>
+            <Button x:Name="btnAjouterSeance" Grid.Column="3"
+                    Content="+ Ajouter une séance"
+                    Height="28" Padding="12,0"
+                    Click="btnAjouterSeance_Click"/>
+        </Grid>
+
+        <!-- DATAGRID — Height="*" pour prendre tout l'espace -->
+        <DataGrid x:Name="dgSeances"
+                  Grid.Row="3"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  HeadersVisibility="Column"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Heure début"
+                                    Binding="{Binding HeureDebut, StringFormat=hh\\:mm}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Heure fin"
+                                    Binding="{Binding HeureFin, StringFormat=hh\\:mm}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Cours"
+                                    Binding="{Binding Cours.CoursNom}"
+                                    Width="2*"/>
+                <DataGridTextColumn Header="Salle"
+                                    Binding="{Binding Salle.SalleNom}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Entraîneur"
+                                    Binding="{Binding Entraineur.EntraineurPrenom}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Places"
+                                    Binding="{Binding NbPlaces}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Statut"
+                                    Binding="{Binding Statut}"
+                                    Width="*"/>
+                <DataGridTemplateColumn Header="" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Rendre indisponible"
+                                    Height="24" Padding="8,0"
+                                    Click="btnRendreIndisponible_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </UserControl>
