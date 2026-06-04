@@ -61,7 +61,16 @@
                           CanUserAddRows="False"
                           HeadersVisibility="Column"
                           SelectionMode="Single"
-                          SelectionChanged="dgClients_SelectionChanged">
+                          SelectionChanged="dgClients_SelectionChanged"
+                          AlternatingRowBackground="#FFF3E8">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#F97316"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding"    Value="8,6"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Nom"    Binding="{Binding Nom}"    Width="*"/>
                         <DataGridTextColumn Header="Prénom" Binding="{Binding Prenom}" Width="*"/>
@@ -77,7 +86,16 @@
                           AutoGenerateColumns="False"
                           CanUserAddRows="False"
                           HeadersVisibility="Column"
-                          SelectionMode="Single">
+                          SelectionMode="Single"
+                          AlternatingRowBackground="#FFF3E8">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#F97316"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding"    Value="8,6"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Jour"   Binding="{Binding JourNom}"          Width="*"/>
                         <DataGridTextColumn Header="Heure"  Binding="{Binding HeureDebut, StringFormat=hh\\:mm}" Width="*"/>

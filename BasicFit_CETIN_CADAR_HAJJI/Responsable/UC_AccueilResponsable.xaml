@@ -61,7 +61,16 @@
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   HeadersVisibility="Column"
-                  SelectionMode="Single" Margin="-12,0,-12,0">
+                  SelectionMode="Single" Margin="-12,0,-12,0"
+                  AlternatingRowBackground="#FFF3E8">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#F97316"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Padding"    Value="8,6"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Heure début"
                                     Binding="{Binding HeureDebut, StringFormat=hh\\:mm}"

@@ -54,7 +54,16 @@
                   CanUserAddRows="False"
                   HeadersVisibility="Column"
                   SelectionMode="Single"
-                  SelectionChanged="dgSeances_SelectionChanged">
+                  SelectionChanged="dgSeances_SelectionChanged"
+                  AlternatingRowBackground="#FFF3E8">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#F97316"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Padding"    Value="8,6"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Cours"       Binding="{Binding Cours.CoursNom, ValidatesOnExceptions=True}"           Width="*"/>
                 <DataGridTextColumn Header="Catégorie"   Binding="{Binding Cours.Categorie.CategorieNom, ValidatesOnExceptions=True}" Width="*"/>

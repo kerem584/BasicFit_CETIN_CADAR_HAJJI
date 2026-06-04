@@ -42,7 +42,16 @@
                       CanUserAddRows="False"
                       HeadersVisibility="Column"
                       SelectionMode="Single"
-                      ItemsSource="{Binding LesCategories}">
+                      ItemsSource="{Binding LesCategories}"
+                      AlternatingRowBackground="#FFF3E8">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#F97316"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding"    Value="8,6"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Nom"         Binding="{Binding CategorieNom}"         Width="*"/>
                         <DataGridTextColumn Header="Description" Binding="{Binding CategorieDescription}" Width="2*"/>
