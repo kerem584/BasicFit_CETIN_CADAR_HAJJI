@@ -11,7 +11,8 @@
         <!-- TITRE -->
         <TextBlock x:Name="tbTitre"
                    FontSize="18" FontWeight="Bold"
-                   Margin="0,0,0,4"/>
+                   Margin="0,0,0,4"
+                   Foreground="#F97316"/>
         <TextBlock x:Name="tbSousTitre"
                    FontSize="12" Foreground="Gray"
                    Margin="0,0,0,20"/>

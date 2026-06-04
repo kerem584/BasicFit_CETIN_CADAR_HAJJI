@@ -24,7 +24,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
                 lesSeances = new ObservableCollection<Seance>(new Seance().FindAll());
                 dgSeances.ItemsSource = lesSeances;
 
-                // Remplir ComboBox catégories
                 ObservableCollection<Categorie> lesCategories =
                     new ObservableCollection<Categorie>(new Categorie().FindAll());
                 cbFiltreCategorie.Items.Add(new Categorie(0, "Toutes", ""));
@@ -32,7 +31,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
                     cbFiltreCategorie.Items.Add(cat);
                 cbFiltreCategorie.SelectedIndex = 0;
 
-                // Remplir ComboBox jours
                 cbFiltreJour.Items.Add("Tous");
                 cbFiltreJour.Items.Add("Lundi");
                 cbFiltreJour.Items.Add("Mardi");
@@ -50,24 +48,20 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
             }
         }
 
-        // ===== FILTRE =====
         private bool FiltreSeances(object obj)
         {
             Seance s = obj as Seance;
 
-            // Filtre catégorie
             if (cbFiltreCategorie.SelectedItem is Categorie catSelectionnee
                 && catSelectionnee.CategorieId != 0)
                 if (s.Cours.Categorie.CategorieId != catSelectionnee.CategorieId)
                     return false;
 
-            // Filtre jour
             if (cbFiltreJour.SelectedItem != null
                 && cbFiltreJour.SelectedItem.ToString() != "Tous")
                 if (s.JourNom != cbFiltreJour.SelectedItem.ToString())
                     return false;
 
-            // Filtre places disponibles
             if (cbPlacesDispo.IsChecked == true)
                 if (s.FindNbInscrits() >= s.NbPlaces)
                     return false;
@@ -81,7 +75,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
             CollectionViewSource.GetDefaultView(dgSeances.ItemsSource).Refresh();
         }
 
-        // ===== SÉLECTION =====
         private void dgSeances_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dgSeances.SelectedItem == null)

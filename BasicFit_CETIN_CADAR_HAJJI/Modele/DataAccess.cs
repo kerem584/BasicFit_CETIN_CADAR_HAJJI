@@ -10,25 +10,9 @@ namespace BasicFit_CETIN_CADAR_HAJJI
         private static NpgsqlConnection connection;
 
         // CONNEXION AVEC BDD IUT
-        public static void InitializeConnection(string username, string password)
-        {
-            connectionString = $"Host=srv-peda-new;Port=5433;Username={username};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI;";
-            try
-            {
-                connection = new NpgsqlConnection(connectionString);
-                connection.Open();
-            }
-            catch (Exception ex)
-            {
-                LogError.Log(ex, "Pb à la connexion\n");
-                throw;
-            }
-        }
-
-        // CONNEXION AVEC BDD LOCALE
         //public static void InitializeConnection(string username, string password)
         //{
-        //    connectionString = $"Host=localhost;Port=5432;Username=postgres;Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
+        //    connectionString = $"Host=srv-peda-new;Port=5433;Username={username};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI;";
         //    try
         //    {
         //        connection = new NpgsqlConnection(connectionString);
@@ -40,6 +24,25 @@ namespace BasicFit_CETIN_CADAR_HAJJI
         //        throw;
         //    }
         //}
+
+        // CONNEXION AVEC BDD LOCALE
+        public static void InitializeConnection(string username, string password)
+        {
+            string pgUser = username;
+
+            connectionString = $"Host=localhost;Port=5432;Username={pgUser};Password={password};Database=BasicFit_CADAR_CETIN_HAJJI";
+            try
+            {
+                connection = new NpgsqlConnection(connectionString);
+                connection.Open();
+            }
+
+            catch (Exception ex)
+            {
+                LogError.Log(ex, "Pb à la connexion\n");
+                throw;
+            }
+        }
 
         public static NpgsqlConnection GetConnection()
         {

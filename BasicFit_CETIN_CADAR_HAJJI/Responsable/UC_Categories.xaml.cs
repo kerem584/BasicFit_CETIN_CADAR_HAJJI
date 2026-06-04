@@ -79,38 +79,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
             tbNom.Focus();
         }
 
-        // ==========================================
-        // BOUTON "RENDRE INDISPONIBLE" (Supprimer)
-        // ==========================================
-        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
-        {
-            // On vérifie d'abord qu'une ligne a bien été sélectionnée dans le tableau
-            if (dgCategories.SelectedItem is Categorie categorieSelectionnee)
-            {
-                // On demande confirmation à l'utilisateur
-                MessageBoxResult reponse = MessageBox.Show($"Voulez-vous vraiment rendre '{categorieSelectionnee.CategorieNom}' indisponible ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-                if (reponse == MessageBoxResult.Yes)
-                {
-                    try
-                    {
-                        // Si tu as une méthode Delete() dans ta classe Categorie, tu l'appelles ici :
-                        categorieSelectionnee.Delete(); 
-
-                        // Puis on la retire de la liste visuelle
-                        lesCategories.Remove(categorieSelectionnee);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erreur lors de la suppression : " + ex.Message);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Veuillez sélectionner une catégorie dans le tableau d'abord.");
-            }
-        }
+        
 
         // ==========================================
         // BOUTON "VALIDER L'AJOUT" (Le formulaire en bas)
@@ -158,5 +127,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
                 MessageBox.Show("Erreur à l'ajout : " + ex.Message);
             }
         }
+
+        
     }
 }

@@ -67,12 +67,24 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
         {
             SeanceViewModel svm = (SeanceViewModel)((Button)sender).DataContext;
 
-            MessageBoxResult result = MessageBox.Show(
-                $"Voulez-vous rendre la séance '{svm.Seance.Cours.CoursNom}' indisponible ?",
-                "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (svm.Statut == "Disponible")
+            {
+                MessageBoxResult result = MessageBox.Show(
+                    $"Voulez-vous rendre la séance '{svm.Seance.Cours.CoursNom}' indisponible ?",
+                    "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-            if (result == MessageBoxResult.Yes)
-                svm.Statut = "Indisponible";
+                if (result == MessageBoxResult.Yes)
+                    svm.Statut = "Indisponible";
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show(
+                    $"Voulez-vous rendre la séance '{svm.Seance.Cours.CoursNom}' disponible ?",
+                    "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (result == MessageBoxResult.Yes)
+                    svm.Statut = "Disponible";
+            }
         }
 
         private void btnAjouterSeance_Click(object sender, RoutedEventArgs e)

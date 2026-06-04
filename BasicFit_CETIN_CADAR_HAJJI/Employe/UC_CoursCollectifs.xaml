@@ -9,7 +9,8 @@
 
         <TextBlock Text="Cours collectifs"
                    FontSize="20" FontWeight="Bold"
-                   Margin="0,0,0,16"/>
+                   Margin="0,0,0,16"
+                   Foreground="#F97316"/>
 
         <!-- FILTRES -->
         <GroupBox Header="Filtres" Margin="0,0,0,12">

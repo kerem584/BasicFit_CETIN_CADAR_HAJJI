@@ -49,10 +49,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
         }
 
         // ===== SÉLECTION =====
-        private void dgCours_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            btnSupprimer.IsEnabled = dgCours.SelectedItem != null;
-        }
+        
 
         // ===== AJOUTER =====
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
@@ -106,34 +103,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
         }
 
         // ===== RENDRE INDISPONIBLE =====
-        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
-        {
-            if (dgCours.SelectedItem == null)
-            {
-                MessageBox.Show("Veuillez sélectionner un cours",
-                                "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-
-            Cours coursSelectionne = (Cours)dgCours.SelectedItem;
-
-            MessageBoxResult result = MessageBox.Show(
-                $"Voulez-vous rendre le cours '{coursSelectionne.CoursNom}' indisponible ?",
-                "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                try
-                {
-                    coursSelectionne.Delete();
-                    lesCours.Remove(coursSelectionne);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erreur : " + ex.Message,
-                                    "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-        }
+        
     }
 }

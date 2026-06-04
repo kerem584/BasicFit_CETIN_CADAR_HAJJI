@@ -18,7 +18,8 @@
             <StackPanel Grid.Row="0">
                 <TextBlock Text="Catégorie des cours"
                        FontSize="20" FontWeight="Bold"
-                       Margin="0,0,0,16"/>
+                       Margin="0,0,0,16"
+                   Foreground="#F97316"/>
 
                 <TextBox x:Name="Catégories"
                      Width="250"
@@ -54,11 +55,10 @@
                         Content="Ajouter"
                         Width="120" Height="30"
                         Margin="0,0,0,8"
-                        Click="btnAjouter_Click"/>
-                    <Button x:Name="btnSupprimer"
-                        Content="Rendre indisponible"
-                        Width="120" Height="30"
-                        Click="btnSupprimer_Click"/>
+                        Click="btnAjouter_Click"
+                        Background="#F97316"
+                        Foreground="White"
+                        BorderThickness="0"/>
                 </StackPanel>
             </Grid>
 
@@ -97,7 +97,10 @@
                     Width="120" Height="30"
                     HorizontalAlignment="Right"
                     Margin="0,8,0,0"
-                    Click="btnValiderAjout_Click"/>
+                    Click="btnValiderAjout_Click"
+                    Background="#F97316"
+                    Foreground="White"
+                    BorderThickness="0"/>
             </StackPanel>
 
         </Grid>

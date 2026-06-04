@@ -21,7 +21,8 @@
         <TextBlock Grid.Row="0"
                    Text="Accueil responsable"
                    FontSize="20" FontWeight="Bold"
-                   Margin="0,0,0,4"/>
+                   Margin="0,0,0,4"
+                   Foreground="#F97316"/>
 
         <!-- DATE -->
         <TextBlock x:Name="tbDate" Grid.Row="1"
@@ -40,11 +41,17 @@
             <TextBlock Text="Jour : " Grid.Column="0"
                        VerticalAlignment="Center" Margin="0,0,8,0"/>
             <ComboBox x:Name="cbJour" Grid.Column="1"
-                      SelectionChanged="cbJour_SelectionChanged"/>
+                      SelectionChanged="cbJour_SelectionChanged"
+                      Background="#F97316"
+                      Foreground="#F97316"
+                      BorderThickness="0"/>
             <Button x:Name="btnAjouterSeance" Grid.Column="3"
                     Content="+ Ajouter une séance"
                     Height="28" Padding="12,0"
-                    Click="btnAjouterSeance_Click"/>
+                    Click="btnAjouterSeance_Click"
+                    Background="#F97316"
+                    Foreground="White"
+                    BorderThickness="0"/>
         </Grid>
 
         <!-- DATAGRID — Height="*" pour prendre tout l'espace -->
@@ -54,7 +61,7 @@
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   HeadersVisibility="Column"
-                  SelectionMode="Single">
+                  SelectionMode="Single" Margin="-12,0,-12,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Heure début"
                                     Binding="{Binding HeureDebut, StringFormat=hh\\:mm}"
@@ -80,9 +87,12 @@
                 <DataGridTemplateColumn Header="" Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Rendre indisponible"
+                            <Button Content="Changer statut"
                                     Height="24" Padding="8,0"
-                                    Click="btnRendreIndisponible_Click"/>
+                                    Click="btnRendreIndisponible_Click"                                    
+                                    Background="#F97316"
+                                    Foreground="White"
+                                    BorderThickness="0"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

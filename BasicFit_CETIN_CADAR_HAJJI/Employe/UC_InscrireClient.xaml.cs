@@ -36,7 +36,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
             }
         }
 
-        // ===== FILTRE CLIENTS =====
         private bool FiltreClients(object obj)
         {
             if (string.IsNullOrEmpty(tbRecherche.Text)) return true;
@@ -52,7 +51,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
             CollectionViewSource.GetDefaultView(dgClients.ItemsSource).Refresh();
         }
 
-        // ===== SÉLECTION CLIENT =====
         private void dgClients_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dgClients.SelectedItem == null)
@@ -64,7 +62,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
             tbClientSelectionne.Text = c.Nom + " " + c.Prenom;
         }
 
-        // ===== NOUVEAU CLIENT =====
         private void btnNouveauClient_Click(object sender, RoutedEventArgs e)
         {
             Window_NouveauClient fenetre = new Window_NouveauClient();
@@ -84,7 +81,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
             }
         }
 
-        // ===== VALIDER INSCRIPTION =====
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
             if (dgClients.SelectedItem == null)
@@ -104,7 +100,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
             Client clientSelectionne = (Client)dgClients.SelectedItem;
             Seance seanceSelectionnee = (Seance)dgSeances.SelectedItem;
 
-            // Vérifier si le cours est complet
             int nbInscrits = seanceSelectionnee.FindNbInscrits();
             if (nbInscrits >= seanceSelectionnee.NbPlaces)
             {
@@ -113,7 +108,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
                 return;
             }
 
-            // Vérifier si le client est déjà inscrit
             foreach (Inscription i in new Inscription().FindBySeance(seanceSelectionnee.SeanceId))
             {
                 if (i.Client.ClientId == clientSelectionne.ClientId)
@@ -136,7 +130,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
                 MessageBox.Show($"{clientSelectionne.Nom} {clientSelectionne.Prenom} inscrit(e) à {seanceSelectionnee.Cours.CoursNom} !",
                                 "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // Réinitialiser la sélection
                 dgClients.SelectedItem = null;
                 dgSeances.SelectedItem = null;
                 tbClientSelectionne.Text = "Aucun client sélectionné";

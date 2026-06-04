@@ -24,7 +24,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
             {
                 lesSeances = new ObservableCollection<Seance>(new Seance().FindAll());
 
-                // Remplir ComboBox jours
                 cbJour.Items.Add("Tous");
                 cbJour.Items.Add("Lundi");
                 cbJour.Items.Add("Mardi");
@@ -54,7 +53,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
                 return;
             }
 
-            // Filtrer les séances selon le jour sélectionné
             ObservableCollection<Seance> seancesFiltrees = new ObservableCollection<Seance>();
             foreach (Seance s in lesSeances)
                 if (s.JourNom == cbJour.SelectedItem.ToString())
@@ -65,7 +63,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
 
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
-            // Récupérer la séance de la ligne cliquée
             Seance seance = (Seance)((Button)sender).DataContext;
             Window_DetailSeance fenetre = new Window_DetailSeance(seance);
             fenetre.ShowDialog();
