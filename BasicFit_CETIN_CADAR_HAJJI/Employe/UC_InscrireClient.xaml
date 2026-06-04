@@ -14,14 +14,12 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- TITRE -->
         <TextBlock Grid.Row="0"
                    Text="Inscrire un client"
                    FontSize="20" FontWeight="Bold"
                    Margin="0,0,0,16"
                    Foreground="#F97316"/>
 
-        <!-- RECHERCHE CLIENT -->
         <GroupBox Grid.Row="1" Header="Rechercher un client" Margin="0,0,0,12" BorderBrush="#F97316" BorderThickness="1">
             <Grid Margin="8">
                 <Grid.ColumnDefinitions>
@@ -45,7 +43,6 @@
             </Grid>
         </GroupBox>
 
-        <!-- DATAGRID CLIENTS + SÉANCES -->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -53,7 +50,6 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- LISTE CLIENTS -->
             <GroupBox Grid.Column="0" Header="Clients trouvés" BorderBrush="#F97316" BorderThickness="1">
                 <DataGrid x:Name="dgClients"
                           IsReadOnly="True"
@@ -79,7 +75,6 @@
                 </DataGrid>
             </GroupBox>
 
-            <!-- LISTE SÉANCES -->
             <GroupBox Grid.Column="2" Header="Choisir une séance" BorderBrush="#F97316" BorderThickness="1">
                 <DataGrid x:Name="dgSeances"
                           IsReadOnly="True"
@@ -106,7 +101,6 @@
             </GroupBox>
         </Grid>
 
-        <!-- RÉSUMÉ SÉLECTION -->
         <GroupBox Grid.Row="3" Header="Récapitulatif" Margin="0,12,0,12" BorderBrush="#F97316" BorderThickness="1">
             <Grid Margin="8">
                 <Grid.ColumnDefinitions>
@@ -134,7 +128,6 @@
             </Grid>
         </GroupBox>
 
-        <!-- BOUTON VALIDER -->
         <Button Grid.Row="4"
                 x:Name="btnValider"
                 Content="Valider l'inscription"

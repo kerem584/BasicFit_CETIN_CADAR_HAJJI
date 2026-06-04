@@ -12,7 +12,6 @@
                    Margin="0,0,0,16"
                    Foreground="#F97316"/>
 
-        <!-- FILTRES -->
         <GroupBox Header="Filtres" Margin="0,0,0,12" BorderBrush="#F97316" BorderThickness="1">
             <Grid Margin="8">
                 <Grid.ColumnDefinitions>
@@ -46,7 +45,6 @@
             </Grid>
         </GroupBox>
 
-        <!-- DATAGRID -->
         <DataGrid x:Name="dgSeances"
                   Height="280"
                   IsReadOnly="True"
@@ -76,7 +74,6 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- DÉTAIL séance sélectionnée -->
         <GroupBox x:Name="gbDetail" Header="Détail de la séance" Margin="0,12,0,0"
                   Visibility="Collapsed">
             <Grid Margin="8">

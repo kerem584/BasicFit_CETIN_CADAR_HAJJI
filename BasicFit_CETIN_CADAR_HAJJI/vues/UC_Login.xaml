@@ -41,7 +41,6 @@
                         Background="Transparent"/>
                 </Border>
 
-                <!-- Mot de passe -->
                 <TextBlock Text="Mot de passe"
                            FontSize="12" FontWeight="SemiBold"
                            Foreground="#374151"
@@ -55,7 +54,6 @@
                                  Background="Transparent"/>
                 </Border>
 
-                <!-- Message d'erreur (caché par défaut) -->
                 <TextBlock x:Name="tbErreur"
                            Text="Identifiant ou mot de passe incorrect"
                            Foreground="#EF4444"
@@ -64,7 +62,6 @@
                            Margin="0,0,0,10"
                            Visibility="Collapsed"/>
 
-                <!-- Bouton Connexion -->
                 <Button x:Name="btnConnexion"
                         Content="Se connecter"
                         Foreground="White"

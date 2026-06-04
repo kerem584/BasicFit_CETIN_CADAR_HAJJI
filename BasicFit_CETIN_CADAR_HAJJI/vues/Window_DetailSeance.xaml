@@ -8,7 +8,6 @@
 
     <StackPanel Margin="20">
 
-        <!-- TITRE -->
         <TextBlock x:Name="tbTitre"
                    FontSize="18" FontWeight="Bold"
                    Margin="0,0,0,4"
@@ -17,7 +16,6 @@
                    FontSize="12" Foreground="Gray"
                    Margin="0,0,0,20"/>
 
-        <!-- INFOS -->
         <Grid Margin="0,0,0,16">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -41,7 +39,6 @@
 
         <Separator Margin="0,0,0,12"/>
 
-        <!-- LISTE INSCRITS -->
         <TextBlock Text="Liste des inscrits"
                    FontWeight="Bold"
                    Margin="0,0,0,8"/>

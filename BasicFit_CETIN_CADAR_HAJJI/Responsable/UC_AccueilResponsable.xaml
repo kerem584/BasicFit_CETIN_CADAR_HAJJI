@@ -8,28 +8,21 @@
     <Grid Margin="20" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Titre -->
             <RowDefinition Height="Auto"/>
-            <!-- Date -->
             <RowDefinition Height="Auto"/>
-            <!-- Filtre + bouton -->
             <RowDefinition Height="*"/>
-            <!-- DataGrid — prend tout l'espace restant -->
         </Grid.RowDefinitions>
 
-        <!-- TITRE -->
         <TextBlock Grid.Row="0"
                    Text="Accueil responsable"
                    FontSize="20" FontWeight="Bold"
                    Margin="0,0,0,4"
                    Foreground="#F97316"/>
 
-        <!-- DATE -->
         <TextBlock x:Name="tbDate" Grid.Row="1"
                    FontSize="13" Foreground="Gray"
                    Margin="0,0,0,20"/>
 
-        <!-- FILTRE + BOUTON -->
         <Grid Grid.Row="2" Margin="0,0,0,12">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -54,7 +47,6 @@
                     BorderThickness="0"/>
         </Grid>
 
-        <!-- DATAGRID — Height="*" pour prendre tout l'espace -->
         <DataGrid x:Name="dgSeances"
                   Grid.Row="3"
                   IsReadOnly="True"

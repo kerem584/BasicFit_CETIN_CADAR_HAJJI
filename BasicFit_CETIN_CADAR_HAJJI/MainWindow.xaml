@@ -13,10 +13,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- SIDEBAR -->
         <DockPanel Grid.Column="0" Background="#1A1F2E">
 
-            <!-- LOGO + INFOS EN HAUT -->
             <StackPanel DockPanel.Dock="Top" Margin="16,20,16,16">
                 <Image Source="/Img/logo.png" Height="40"/>
                 <TextBlock Text="Réservations de cours"
@@ -34,7 +32,6 @@
                 <Separator Background="#F97316" Margin="0,12,0,0"/>
             </StackPanel>
 
-            <!-- BOUTON DÉCONNEXION EN BAS -->
             <Button DockPanel.Dock="Bottom"
                     Content="Se déconnecter"
                     Margin="12,12"
@@ -46,14 +43,12 @@
                     BorderThickness="0"
                     Click="btnDeconnexion_Click"/>
 
-            <!-- MENU (rempli depuis le .cs) -->
             <StackPanel x:Name="spMenu"
                         DockPanel.Dock="Top"
                         Margin="0,4,0,0"/>
 
         </DockPanel>
 
-        <!-- ZONE CONTENU -->
         <ContentControl x:Name="ZoneContenu"
                         Grid.Column="1"
                         Background="#F8F9FA"/>

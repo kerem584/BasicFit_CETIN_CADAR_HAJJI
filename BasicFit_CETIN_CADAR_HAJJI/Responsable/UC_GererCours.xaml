@@ -14,7 +14,6 @@
                    Margin="0,0,0,16"
                    Foreground="#F97316"/>
 
-            <!-- BARRE DE RECHERCHE -->
             <TextBox x:Name="tbRecherche"
                  Width="250"
                  Margin="0,0,0,12"
@@ -27,7 +26,6 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- DATAGRID -->
                 <DataGrid x:Name="dgCours"
                       Grid.Column="0"
                       MaxHeight="250"
@@ -58,7 +56,6 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <!-- BOUTONS -->
                 <StackPanel Grid.Column="1" Margin="12,0,0,0" VerticalAlignment="Center">
                     <Button x:Name="btnAjouter"
                         Content="Ajouter"
@@ -72,7 +69,6 @@
 
             </Grid>
 
-            <!-- FORMULAIRE AJOUT -->
             <GroupBox Header="Nouveau cours" Margin="0,16,0,0" BorderBrush="#F97316" BorderThickness="1">
                 <Grid Margin="8">
                     <Grid.ColumnDefinitions>
