@@ -30,8 +30,8 @@
                            Margin="0,10,0,2"/>
                 <TextBlock x:Name="tbRoleUser"
                            Text=""
-                           FontSize="10" Foreground="#94A3B8"/>
-                <Separator Background="#334155" Margin="0,12,0,0"/>
+                           FontSize="12" Foreground="#F97316" FontWeight="Bold"/>
+                <Separator Background="#F97316" Margin="0,12,0,0"/>
             </StackPanel>
 
             <!-- BOUTON DÉCONNEXION EN BAS -->
