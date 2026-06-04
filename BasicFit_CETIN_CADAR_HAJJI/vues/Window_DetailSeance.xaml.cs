@@ -19,7 +19,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Vues
         {
             try
             {
-                // Infos de la séance
                 tbTitre.Text = laSeance.Cours.CoursNom + " - " +
                                    laSeance.HeureDebut.ToString(@"hh\:mm") + "/" +
                                    laSeance.HeureFin.ToString(@"hh\:mm");
@@ -27,7 +26,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Vues
                                     laSeance.Entraineur.EntraineurNom;
                 tbSalle.Text = laSeance.Salle.SalleNom;
 
-                // Inscrits
                 ObservableCollection<Inscription> lesInscrits =
                     new ObservableCollection<Inscription>(
                         new Inscription().FindBySeance(laSeance.SeanceId));
@@ -35,7 +33,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Vues
                 tbInscrits.Text = lesInscrits.Count + " / " + laSeance.NbPlaces;
                 dgInscrits.ItemsSource = lesInscrits;
 
-                // Sous-titre
                 tbSousTitre.Text = laSeance.Entraineur.EntraineurPrenom + " · " +
                                    laSeance.Salle.SalleNom + " · " +
                                    lesInscrits.Count + " inscrits / " +

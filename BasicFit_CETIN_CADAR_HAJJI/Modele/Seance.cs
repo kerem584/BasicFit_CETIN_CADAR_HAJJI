@@ -18,7 +18,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        // Dictionnaire pour convertir le chiffre en nom du jour
         public static readonly Dictionary<int, string> NomsJours = new Dictionary<int, string>
         {
             { 1, "Lundi" }, { 2, "Mardi" }, { 3, "Mercredi" },

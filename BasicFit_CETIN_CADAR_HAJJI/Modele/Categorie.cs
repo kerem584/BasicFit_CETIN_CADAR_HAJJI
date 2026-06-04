@@ -14,14 +14,12 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        // Constructeur vide (obligatoire pour new Categorie())
         public Categorie()
         {
             this.categorieNom = "";
             this.categorieDescription = "";
         }
 
-        // Constructeur avec paramètres
         public Categorie(int categorieId, string categorieNom, string categorieDescription)
         {
             this.CategorieId = categorieId;

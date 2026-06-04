@@ -22,7 +22,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
                 cbSalle.ItemsSource = new Salle().FindAll();
                 cbEntraineur.ItemsSource = new Entraineur().FindAll();
 
-                // Remplir les heures de 06:00 à 20:00
                 for (int h = 6; h <= 20; h++)
                 {
                     string heure = h.ToString("00") + ":00";
@@ -44,7 +43,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
             }
         }
 
-        // Quand heure début change, met à jour heure fin pour n'afficher que les heures après
         private void cbHeureDebut_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cbHeureDebut.SelectedItem == null) return;
@@ -69,7 +67,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
-            // Vérification champs obligatoires
             if (cbCours.SelectedItem == null || cbSalle.SelectedItem == null
                 || cbEntraineur.SelectedItem == null || cbJour.SelectedItem == null
                 || string.IsNullOrWhiteSpace(cbHeureDebut.Text)
@@ -81,7 +78,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
                 return;
             }
 
-            // Vérification format heures
             if (cbHeureDebut.SelectedItem == null || cbHeureFin.SelectedItem == null)
             {
                 MessageBox.Show("Veuillez sélectionner les heures",
@@ -92,7 +88,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
             TimeSpan heureDebut = TimeSpan.Parse(cbHeureDebut.SelectedItem.ToString());
             TimeSpan heureFin = TimeSpan.Parse(cbHeureFin.SelectedItem.ToString());
 
-            // Vérification capacité
             if (!int.TryParse(tbCapacite.Text, out int capacite) || capacite < 1)
             {
                 MessageBox.Show("La capacité doit être un nombre >= 1",
@@ -100,7 +95,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
                 return;
             }
 
-            // Récupérer le numéro du jour
             string jourNom = ((ComboBoxItem)cbJour.SelectedItem).Content.ToString();
             int jourNum = Seance.NomsJours.FirstOrDefault(x => x.Value == jourNom).Key;
 
@@ -115,7 +109,7 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
                 NouvelleSeance.HeureFin = heureFin;
                 NouvelleSeance.NbPlaces = capacite;
 
-                NouvelleSeance.Create();    // Ajout en BD
+                NouvelleSeance.Create();    
 
                 this.DialogResult = true;
                 this.Close();

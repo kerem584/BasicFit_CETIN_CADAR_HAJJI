@@ -115,7 +115,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI
             ZoneContenu.Content = new UC_Categories();
         }
 
-        // ===== DÉCONNEXION =====
         private void btnDeconnexion_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow login = new LoginWindow();

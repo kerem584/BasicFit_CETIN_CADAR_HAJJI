@@ -14,7 +14,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.vues
 
         private void btnValider_Click(object sender, RoutedEventArgs e)
         {
-            // Vérification champs obligatoires
             if (string.IsNullOrWhiteSpace(tbNom.Text)
                 || string.IsNullOrWhiteSpace(tbPrenom.Text)
                 || string.IsNullOrWhiteSpace(tbMail.Text)

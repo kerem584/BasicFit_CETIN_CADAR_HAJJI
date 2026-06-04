@@ -57,7 +57,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
             }
         }
 
-        // Clé composite (seance_id + client_id) donc pas de RETURNING
         public int Create()
         {
             using (var cmd = new NpgsqlCommand("INSERT INTO inscription (seance_id, client_id, date_inscription) VALUES (@seanceId, @clientId, @date)"))

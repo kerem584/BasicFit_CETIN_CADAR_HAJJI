@@ -97,7 +97,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
         }
     }
 
-    // Classe helper pour gérer le statut visuel sans toucher à la BD
     public class SeanceViewModel : System.ComponentModel.INotifyPropertyChanged
     {
         private string statut;
@@ -111,7 +110,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
             this.statut = "Disponible";
         }
 
-        // Propriétés déléguées vers Seance pour le binding DataGrid
         public TimeSpan HeureDebut => Seance.HeureDebut;
         public TimeSpan HeureFin => Seance.HeureFin;
         public Cours Cours => Seance.Cours;

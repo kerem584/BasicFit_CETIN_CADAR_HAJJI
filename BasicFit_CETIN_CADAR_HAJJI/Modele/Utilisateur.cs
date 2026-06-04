@@ -67,7 +67,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Modele
                 this.role = value;
             }
         }
-        // Cherche le rôle en fonction du login
         public Utilisateur FindByLogin(string login)
         {
             using (var cmd = new NpgsqlCommand("SELECT * FROM utilisateur WHERE login = @login"))

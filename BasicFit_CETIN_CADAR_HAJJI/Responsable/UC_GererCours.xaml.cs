@@ -34,7 +34,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
             }
         }
 
-        // ===== FILTRE =====
         private bool FiltreRecherche(object obj)
         {
             if (string.IsNullOrEmpty(tbRecherche.Text)) return true;
@@ -48,10 +47,8 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
             CollectionViewSource.GetDefaultView(dgCours.ItemsSource).Refresh();
         }
 
-        // ===== SÉLECTION =====
         
 
-        // ===== AJOUTER =====
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             tbNom.Text = "";
@@ -102,7 +99,6 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Responsable
             }
         }
 
-        // ===== RENDRE INDISPONIBLE =====
         
     }
 }
