@@ -55,7 +55,8 @@
 
         <!-- ZONE CONTENU -->
         <ContentControl x:Name="ZoneContenu"
-                        Grid.Column="1"/>
+                        Grid.Column="1"
+                        Background="#F8F9FA"/>
 
     </Grid>
 </Window>

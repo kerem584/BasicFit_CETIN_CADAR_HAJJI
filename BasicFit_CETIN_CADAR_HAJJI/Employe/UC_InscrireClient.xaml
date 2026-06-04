@@ -22,7 +22,7 @@
                    Foreground="#F97316"/>
 
         <!-- RECHERCHE CLIENT -->
-        <GroupBox Grid.Row="1" Header="Rechercher un client" Margin="0,0,0,12">
+        <GroupBox Grid.Row="1" Header="Rechercher un client" Margin="0,0,0,12" BorderBrush="#F97316" BorderThickness="1">
             <Grid Margin="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -54,7 +54,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- LISTE CLIENTS -->
-            <GroupBox Grid.Column="0" Header="Clients trouvés">
+            <GroupBox Grid.Column="0" Header="Clients trouvés" BorderBrush="#F97316" BorderThickness="1">
                 <DataGrid x:Name="dgClients"
                           IsReadOnly="True"
                           AutoGenerateColumns="False"
@@ -71,7 +71,7 @@
             </GroupBox>
 
             <!-- LISTE SÉANCES -->
-            <GroupBox Grid.Column="2" Header="Choisir une séance">
+            <GroupBox Grid.Column="2" Header="Choisir une séance" BorderBrush="#F97316" BorderThickness="1">
                 <DataGrid x:Name="dgSeances"
                           IsReadOnly="True"
                           AutoGenerateColumns="False"
@@ -89,7 +89,7 @@
         </Grid>
 
         <!-- RÉSUMÉ SÉLECTION -->
-        <GroupBox Grid.Row="3" Header="Récapitulatif" Margin="0,12,0,12">
+        <GroupBox Grid.Row="3" Header="Récapitulatif" Margin="0,12,0,12" BorderBrush="#F97316" BorderThickness="1">
             <Grid Margin="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>

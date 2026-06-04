@@ -63,7 +63,7 @@
             </Grid>
 
             <StackPanel Grid.Row="2">
-                <GroupBox Header="Nouvelle catégorie">
+                <GroupBox Header="Nouvelle catégorie" BorderBrush="#F97316" BorderThickness="1">
                     <Grid Margin="8">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>

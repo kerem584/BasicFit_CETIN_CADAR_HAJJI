@@ -64,7 +64,7 @@
             </Grid>
 
             <!-- FORMULAIRE AJOUT -->
-            <GroupBox Header="Nouveau cours" Margin="0,16,0,0">
+            <GroupBox Header="Nouveau cours" Margin="0,16,0,0" BorderBrush="#F97316" BorderThickness="1">
                 <Grid Margin="8">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>

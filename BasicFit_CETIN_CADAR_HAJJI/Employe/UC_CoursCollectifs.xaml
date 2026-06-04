@@ -13,7 +13,7 @@
                    Foreground="#F97316"/>
 
         <!-- FILTRES -->
-        <GroupBox Header="Filtres" Margin="0,0,0,12">
+        <GroupBox Header="Filtres" Margin="0,0,0,12" BorderBrush="#F97316" BorderThickness="1">
             <Grid Margin="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
