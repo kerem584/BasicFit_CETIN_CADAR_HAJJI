@@ -9,7 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\icone.ico" />
     <None Remove="img\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="img\icone.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,5 +24,8 @@
   <ItemGroup>
     <Resource Include="img\logo.png" />
   </ItemGroup>
+	<PropertyGroup>
+		<ApplicationIcon>img\icone.ico</ApplicationIcon>
+	</PropertyGroup>
 
 </Project>
