@@ -82,6 +82,7 @@
                           CanUserAddRows="False"
                           HeadersVisibility="Column"
                           SelectionMode="Single"
+                          SelectionChanged="dgSeances_SelectionChanged"
                           AlternatingRowBackground="#FFF3E8">
                     <DataGrid.ColumnHeaderStyle>
                         <Style TargetType="DataGridColumnHeader">

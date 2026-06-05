@@ -142,5 +142,15 @@ namespace BasicFit_CETIN_CADAR_HAJJI.Employe
                                 "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        private void dgSeances_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dgSeances.SelectedItem == null)
+            {
+                tbSeanceSelectionnee.Text = "Aucune séance sélectionnée";
+                return;
+            }
+            Seance s = (Seance)dgSeances.SelectedItem;
+            tbSeanceSelectionnee.Text = s.Cours.CoursNom + " — " + s.JourNom + " " + s.HeureDebut.ToString(@"hh\:mm");
+        }
     }
 }
